@@ -18,11 +18,7 @@ import { DefaultEditor } from './default-editor';
            (keydown.esc)="onStopEditing.emit()"
            required="{{cell.getColumn().getConfig()?.required?true:false}}"
            [min]="cell.getColumn().getConfig()?.min"
-           [max]="cell.getColumn().getConfig()?.max"
-           [gt]="cell.getColumn().getConfig()?.gt"
-           [lt]="cell.getColumn().getConfig()?.lt"
-           [range]="cell.getColumn().getConfig()?.range"
-           #field="ngModel">
+           [max]="cell.getColumn().getConfig()?.max">
     `,
 })
 export class NumberEditorComponent extends DefaultEditor {
