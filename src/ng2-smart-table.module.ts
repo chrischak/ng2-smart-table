@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2CompleterModule } from 'ng2-completer';
 import { CustomFormsModule } from 'ng2-validation'
 
@@ -24,8 +24,14 @@ import {
   NumberEditorComponent
 } from './ng2-smart-table/components/cell/cell-editors';
 import { FilterComponent } from './ng2-smart-table/components/filter/filter.component';
+import {
+  InputFilterComponent,
+  SelectFilterComponent,
+  CheckboxFilterComponent,
+  CompleterFilterComponent } from './ng2-smart-table/components/filter/filter-types';
 import { PagerComponent } from './ng2-smart-table/components/pager/pager.component';
-import { TitleComponent } from './ng2-smart-table/components/title/title.component';
+import { NG2_SMART_TABLE_THEAD_DIRECTIVES } from './ng2-smart-table/components/thead/thead.directives';
+import { NG2_SMART_TABLE_TBODY_DIRECTIVES } from './ng2-smart-table/components/tbody/tbody.directives';
 
 @NgModule({
   imports: [
@@ -33,7 +39,8 @@ import { TitleComponent } from './ng2-smart-table/components/title/title.compone
     Ng2CompleterModule,
     FormsModule,
     DragulaModule,
-    CustomFormsModule
+    CustomFormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     CellComponent,
@@ -49,8 +56,13 @@ import { TitleComponent } from './ng2-smart-table/components/title/title.compone
     CheckboxEditorComponent,
     NumberEditorComponent,
     FilterComponent,
+    InputFilterComponent,
+    SelectFilterComponent,
+    CheckboxFilterComponent,
+    CompleterFilterComponent,
     PagerComponent,
-    TitleComponent,
+    ...NG2_SMART_TABLE_THEAD_DIRECTIVES,
+    ...NG2_SMART_TABLE_TBODY_DIRECTIVES,
     ...NG2_SMART_TABLE_DIRECTIVES
   ],
   exports: [

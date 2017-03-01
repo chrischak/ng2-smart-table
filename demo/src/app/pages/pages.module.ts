@@ -20,6 +20,7 @@ import { AdvancedExampleConfirmComponent } from './demo/components/advanced-exam
 import { AdvancedExampleServerComponent } from './demo/components/advanced-example-server.component';
 import { AdvancedExamplesTypesComponent } from './demo/components/advanced-example-types.component';
 import { AdvancedExamplesCustomEditorComponent } from './demo/components/advanced-example-custom-editor.component';
+import { AdvancedExampleFiltersComponent } from './demo/components/advanced-example-filters.component';
 import { CustomEditorComponent } from './demo/components/custom-editor.component';
 import { InPlaceEditComponent } from './demo/components/in-place-edit-example.component';
 
@@ -46,6 +47,7 @@ import { InPlaceEditComponent } from './demo/components/in-place-edit-example.co
     AdvancedExampleServerComponent,
     AdvancedExamplesTypesComponent,
     AdvancedExamplesCustomEditorComponent,
+    AdvancedExampleFiltersComponent,
     ScrollPositionDirective,
     CustomEditorComponent,
     InPlaceEditComponent
