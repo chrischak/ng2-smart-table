@@ -23,18 +23,18 @@ import { DefaultEditor } from './default-editor';
         [maxlength]="cell.getColumn().getConfig()?.maxLength"
         [pattern]="cell.getColumn().getConfig()?.pattern">
       <div *ngIf="field.errors && (field.dirty || field.touched)">
-        <icon-input-error-tooltip
+        <icon-error-tooltip
         content="Поле обязательно для заполнения"
-        *ngIf="field.errors.required"></icon-input-error-tooltip>
-        <icon-input-error-tooltip
+        *ngIf="field.errors.required"></icon-error-tooltip>
+        <icon-error-tooltip
         content="Поле должно содержать не менее {{field.errors.minlength.requiredLength}} знаков"
-        *ngIf="field.errors.minlength"></icon-input-error-tooltip>
-        <icon-input-error-tooltip
+        *ngIf="field.errors.minlength"></icon-error-tooltip>
+        <icon-error-tooltip
         content="Поле должно содержать не более {{field.errors.maxlength.requiredLength}} знаков"
-        *ngIf="field.errors.maxlength"></icon-input-error-tooltip>
-        <icon-input-error-tooltip
+        *ngIf="field.errors.maxlength"></icon-error-tooltip>
+        <icon-error-tooltip
         content="Поле не соответствует образцу"
-        *ngIf="field.errors.pattern"></icon-input-error-tooltip>
+        *ngIf="field.errors.pattern"></icon-error-tooltip>
       </div>
     </div>
     `,
