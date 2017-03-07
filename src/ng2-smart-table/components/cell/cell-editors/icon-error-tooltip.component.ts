@@ -1,7 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-import { DefaultEditor } from './default-editor';
-
 @Component({
   selector: 'icon-error-tooltip',
   template: `        
@@ -10,13 +8,8 @@ import { DefaultEditor } from './default-editor';
             [placement]="placement || 'bottom'"></i>
     `,
 })
-export class IconErrorTooltipComponent extends DefaultEditor {
-
+export class IconErrorTooltipComponent {
     @Input() public icon: string = "ion-alert-circled";
     @Input() public content: string;
     @Input() public placement: string = "bottom";
-
-  constructor() {
-    super();
-  }
 }
