@@ -5,6 +5,7 @@ import { Ng2CompleterModule } from 'ng2-completer';
 import { CustomFormsModule } from 'ng2-validation'
 
 import { DragulaModule } from 'ng2-dragula';
+import { TooltipModule  } from 'ng2-bootstrap/tooltip';
 
 import { NG2_SMART_TABLE_DIRECTIVES } from './ng2-smart-table.directives';
 import { CellComponent } from './ng2-smart-table/components/cell/cell.component';
@@ -40,7 +41,9 @@ import { NG2_SMART_TABLE_TBODY_DIRECTIVES } from './ng2-smart-table/components/t
     FormsModule,
     DragulaModule,
     CustomFormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    TooltipModule.forRoot()
   ],
   declarations: [
     CellComponent,
