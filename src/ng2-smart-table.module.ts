@@ -22,7 +22,8 @@ import {
   SelectEditorComponent,
   TextareaEditorComponent,
   CheckboxEditorComponent,
-  NumberEditorComponent
+  NumberEditorComponent,
+  IconErrorTooltipComponent
 } from './ng2-smart-table/components/cell/cell-editors';
 import { FilterComponent } from './ng2-smart-table/components/filter/filter.component';
 import {
@@ -46,6 +47,7 @@ import { NG2_SMART_TABLE_TBODY_DIRECTIVES } from './ng2-smart-table/components/t
     TooltipModule.forRoot()
   ],
   declarations: [
+    IconErrorTooltipComponent,
     CellComponent,
     ViewCellComponent,
     DefaultEditComponent,

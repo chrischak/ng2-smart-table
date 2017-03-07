@@ -6,7 +6,9 @@ import { DefaultEditor } from './default-editor';
   selector: 'number-editor',
   styleUrls: ['./editor.component.scss'],
   template: `
-    <input [ngClass]="inputClass"
+    <div class="form-group has-feedback" [class.has-error]="field.errors && (field.dirty || field.touched)" style="margin-bottom: 0;">
+      <input #field="ngModel"
+           [ngClass]="inputClass"
            type="number"
            class="form-control"
            [(ngModel)]="cell.newValue"
@@ -16,9 +18,23 @@ import { DefaultEditor } from './default-editor';
            (click)="onClick.emit($event)"
            (keydown.enter)="onEdited.emit($event)"
            (keydown.esc)="onStopEditing.emit()"
-           required="{{cell.getColumn().getConfig()?.required?true:false}}"
+           [required]="cell.getColumn().getConfig()?.required"
+           [attr.min]="cell.getColumn().getConfig()?.min"
            [min]="cell.getColumn().getConfig()?.min"
-           [max]="cell.getColumn().getConfig()?.max">
+           [attr.max]="cell.getColumn().getConfig()?.max"
+           [max]="cell.getColumn().getConfig()?.max">      
+      <div *ngIf="field.errors && (field.dirty || field.touched)">
+        <icon-error-tooltip
+            content="Поле обязательно для заполнения"
+            *ngIf="field.errors.required"></icon-error-tooltip>        
+        <icon-error-tooltip
+            content="Величина должна быть не меньше {{cell.getColumn().getConfig()?.min}}"
+            *ngIf="field.errors.min"></icon-error-tooltip>        
+        <icon-error-tooltip
+            content="Величина должна быть не больше {{cell.getColumn().getConfig()?.max}}"
+            *ngIf="field.errors.max"></icon-error-tooltip>
+      </div>
+    </div>
     `,
 })
 export class NumberEditorComponent extends DefaultEditor {

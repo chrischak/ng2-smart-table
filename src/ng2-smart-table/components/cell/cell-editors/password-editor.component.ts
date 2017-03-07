@@ -6,16 +6,37 @@ import { DefaultEditor } from './default-editor';
   selector: 'password-editor',
   styleUrls: ['./editor.component.scss'],
   template: `
-    <input [ngClass]="inputClass"
-           type="password"
-           class="form-control"
-           [(ngModel)]="cell.newValue"
-           [name]="cell.getId()"
-           [placeholder]="'******'"
-           [disabled]="!cell.isEditable()"
-           (click)="onClick.emit($event)"
-           (keydown.enter)="onEdited.emit($event)"
-           (keydown.esc)="onStopEditing.emit()">
+    <div class="form-group has-feedback" [class.has-error]="field.errors && (field.dirty || field.touched)" style="margin-bottom: 0;">
+      <input #field="ngModel"
+        type="password"
+        [ngClass]="inputClass"
+        class="form-control"
+        [(ngModel)]="cell.newValue"
+        [name]="cell.getId()"
+        [placeholder]="cell.getTitle()"
+        [disabled]="!cell.isEditable()"
+        (click)="onClick.emit($event)"
+        (keydown.enter)="onEdited.emit($event)"
+        (keydown.esc)="onStopEditing.emit()"
+        [required]="cell.getColumn().getConfig()?.required"
+        [minlength]="cell.getColumn().getConfig()?.minLength"
+        [maxlength]="cell.getColumn().getConfig()?.maxLength"
+        [pattern]="cell.getColumn().getConfig()?.pattern">
+      <div *ngIf="field.errors && (field.dirty || field.touched)">
+        <icon-input-error-tooltip
+        content="Поле обязательно для заполнения"
+        *ngIf="field.errors.required"></icon-input-error-tooltip>
+        <icon-input-error-tooltip
+        content="Поле должно содержать не менее {{field.errors.minlength.requiredLength}} знаков"
+        *ngIf="field.errors.minlength"></icon-input-error-tooltip>
+        <icon-input-error-tooltip
+        content="Поле должно содержать не более {{field.errors.maxlength.requiredLength}} знаков"
+        *ngIf="field.errors.maxlength"></icon-input-error-tooltip>
+        <icon-input-error-tooltip
+        content="Поле не соответствует образцу"
+        *ngIf="field.errors.pattern"></icon-input-error-tooltip>
+      </div>
+    </div>
     `,
 })
 export class PasswordEditorComponent extends DefaultEditor {

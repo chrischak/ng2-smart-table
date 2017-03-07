@@ -22,22 +22,18 @@ import { DefaultEditor } from './default-editor';
         [maxlength]="cell.getColumn().getConfig()?.maxLength"
         [pattern]="cell.getColumn().getConfig()?.pattern">
       <div *ngIf="field.errors && (field.dirty || field.touched)">
-        <i class="ion-alert-circled form-control-feedback" style="pointer-events: auto; cursor: pointer; margin-top: 0;"
-            tooltip="Поле обязательно для заполнения"
-            placement="bottom"
-            *ngIf="field.errors.required"></i>          
-        <i class="ion-alert-circled form-control-feedback" style="pointer-events: auto; cursor: pointer; margin-top: 0;"
-            tooltip="Поле должно содержать не менее {{field.errors.minlength.requiredLength}} знаков"
-            placement="bottom"
-            *ngIf="field.errors.minlength"></i>          
-        <i class="ion-alert-circled form-control-feedback" style="pointer-events: auto; cursor: pointer; margin-top: 0;"
-            tooltip="Поле должно содержать не более {{field.errors.maxlength.requiredLength}} знаков"
-            placement="bottom"
-            *ngIf="field.errors.maxlength"></i>          
-        <i class="ion-alert-circled form-control-feedback" style="pointer-events: auto; cursor: pointer; margin-top: 0;"
-            tooltip="Значение поля не соответствует образцу"
-            placement="bottom"
-            *ngIf="field.errors.pattern"></i>
+        <icon-error-tooltip
+            content="Поле обязательно для заполнения"
+            *ngIf="field.errors.required"></icon-error-tooltip>          
+        <icon-error-tooltip
+            content="Поле должно содержать не менее {{field.errors.minlength.requiredLength}} знаков"
+            *ngIf="field.errors.minlength"></icon-error-tooltip>          
+        <icon-error-tooltip
+            content="Поле должно содержать не более {{field.errors.maxlength.requiredLength}} знаков"
+            *ngIf="field.errors.maxlength"></icon-error-tooltip>          
+        <icon-error-tooltip
+            content="Значение поля не соответствует образцу"
+            *ngIf="field.errors.pattern"></icon-error-tooltip>
       </div>
     </div>
     `,
