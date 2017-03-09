@@ -26,13 +26,13 @@ import { DefaultEditor } from './default-editor';
       <div *ngIf="field.errors && (field.dirty || field.touched)">
         <icon-error-tooltip
             content="Поле обязательно для заполнения"
-            *ngIf="field.errors.required"></icon-error-tooltip>        
+            *ngIf="field.hasError('required')"></icon-error-tooltip>        
         <icon-error-tooltip
             content="Величина должна быть не меньше {{cell.getColumn().getConfig()?.min}}"
-            *ngIf="field.errors.min"></icon-error-tooltip>        
+            *ngIf="field.hasError('min')"></icon-error-tooltip>        
         <icon-error-tooltip
             content="Величина должна быть не больше {{cell.getColumn().getConfig()?.max}}"
-            *ngIf="field.errors.max"></icon-error-tooltip>
+            *ngIf="field.hasError('max')"></icon-error-tooltip>
       </div>
     </div>
     `,

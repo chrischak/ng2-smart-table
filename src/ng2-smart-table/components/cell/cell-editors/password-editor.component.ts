@@ -25,16 +25,16 @@ import { DefaultEditor } from './default-editor';
       <div *ngIf="field.errors && (field.dirty || field.touched)">
         <icon-error-tooltip
         content="Поле обязательно для заполнения"
-        *ngIf="field.errors.required"></icon-error-tooltip>
+        *ngIf="field.hasError('required')"></icon-error-tooltip>
         <icon-error-tooltip
-        content="Поле должно содержать не менее {{field.errors.minlength.requiredLength}} знаков"
-        *ngIf="field.errors.minlength"></icon-error-tooltip>
+        content="Поле должно содержать не менее {{cell.getColumn().getConfig()?.minLength}} знаков"
+        *ngIf="field.hasError('minlength')"></icon-error-tooltip>
         <icon-error-tooltip
-        content="Поле должно содержать не более {{field.errors.maxlength.requiredLength}} знаков"
-        *ngIf="field.errors.maxlength"></icon-error-tooltip>
+        content="Поле должно содержать не более {{cell.getColumn().getConfig()?.maxLength}} знаков"
+        *ngIf="field.hasError('maxlength')"></icon-error-tooltip>
         <icon-error-tooltip
         content="Поле не соответствует образцу"
-        *ngIf="field.errors.pattern"></icon-error-tooltip>
+        *ngIf="field.hasError('pattern')"></icon-error-tooltip>
       </div>
     </div>
     `,
