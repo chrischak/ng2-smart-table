@@ -50,7 +50,7 @@ export class TbodyEditDeleteComponent {
         data: this.row.getData(),
         source: this.source
       });
-      this.grid.delete(this.row, null);
+      this.grid.delete(this.row, this.deleteConfirm);
     } else {
       this.grid.delete(this.row, this.deleteConfirm);
     }
