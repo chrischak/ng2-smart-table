@@ -35,6 +35,7 @@ export class TbodyEditDeleteComponent {
         data: this.row.getData(),
         source: this.source
       });
+      this.grid.edit(this.row);
     } else {
       this.grid.edit(this.row);
     }
@@ -49,6 +50,7 @@ export class TbodyEditDeleteComponent {
         data: this.row.getData(),
         source: this.source
       });
+      this.grid.delete(this.row, null);
     } else {
       this.grid.delete(this.row, this.deleteConfirm);
     }

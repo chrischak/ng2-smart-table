@@ -29,6 +29,7 @@ export class AddButtonComponent implements AfterViewInit {
       this.create.emit({
         source: this.source
       });
+      this.grid.createFormShown = true;
     } else
       this.grid.createFormShown = true;
   }
