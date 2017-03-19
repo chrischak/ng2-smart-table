@@ -136,7 +136,6 @@ export class Ng2SmartTableComponent implements OnChanges, OnInit {
       this.create.emit({
         source: this.source
       });
-      this.grid.createFormShown = true;
     } else {
       this.grid.createFormShown = true;
     }
@@ -195,7 +194,6 @@ export class Ng2SmartTableComponent implements OnChanges, OnInit {
         data: row.getData(),
         source: this.source
       });
-      this.grid.edit(row);
     } else {
       this.grid.edit(row);
     }
@@ -210,7 +208,6 @@ export class Ng2SmartTableComponent implements OnChanges, OnInit {
         data: row.getData(),
         source: this.source
       });
-      this.grid.delete(row, null);
     } else {
       this.grid.delete(row, this.deleteConfirm);
     }
