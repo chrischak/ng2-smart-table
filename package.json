@@ -1,6 +1,6 @@
 {
   "name": "eko-point-ng2-smart-table",
-  "version": "0.6.14",
+  "version": "0.6.15",
   "description": "Angular 2 Smart Table",
   "author": "akveo",
   "homepage": "http://eko-point.ru/",
@@ -95,7 +95,7 @@
     "webpack-dev-server": "2.2.0",
     "webpack-dll-bundles-plugin": "1.0.0-beta.5",
     "webpack-merge": "2.6.1",
-    "zone.js": "0.7.7",    
+    "zone.js": "0.7.7",
     "ng2-validation": "^3.8.0"
   },
   "scripts": {
