@@ -9,7 +9,9 @@ import { TooltipModule  } from 'ng2-bootstrap/tooltip';
 
 import { NG2_SMART_TABLE_DIRECTIVES } from './ng2-smart-table.directives';
 import { CellComponent } from './ng2-smart-table/components/cell/cell.component';
-import { ViewCellComponent } from './ng2-smart-table/components/cell/cell-view-mode/view-cell.component';
+import {
+  ViewCellComponent,
+  CustomViewComponent } from './ng2-smart-table/components/cell/cell-view-mode';
 import {
   EditCellComponent,
   DefaultEditComponent,
@@ -52,6 +54,7 @@ import { NG2_SMART_TABLE_TBODY_DIRECTIVES } from './ng2-smart-table/components/t
     ViewCellComponent,
     DefaultEditComponent,
     CustomEditComponent,
+    CustomViewComponent,
     EditCellComponent,
     CompleterEditorComponent,
     InputEditorComponent,
