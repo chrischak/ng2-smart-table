@@ -130,17 +130,6 @@ export class Ng2SmartTableComponent implements OnChanges, OnInit {
     }
   }
 
-  onAdd(event): boolean {
-    event.stopPropagation();
-    if (this.grid.getSetting('mode') === 'external' && typeof this.create !== 'undefined') {
-      this.create.emit({
-        source: this.source
-      });
-    } else {
-      this.grid.createFormShown = true;
-    }
-    return false;
-  }
   editRowSelect(row: Row) {
     if (this.grid.getSetting('selectMode') === 'multi')
       this.onMultipleSelectRow(row);
@@ -180,63 +169,7 @@ export class Ng2SmartTableComponent implements OnChanges, OnInit {
     this._onSelectRow(row.getData());
   }
 
-  onEdit(row: Row, event): boolean {
-    event.stopPropagation();
-
-    if (this.grid.getSetting('selectMode') === 'multi') {
-      this.onMultipleSelectRow(row);
-    } else {
-      this.onSelectRow(row);
-    }
-
-    if (this.grid.getSetting('mode') === 'external' && typeof this.edit !== 'undefined') {
-      this.edit.emit({
-        data: row.getData(),
-        source: this.source
-      });
-    } else {
-      this.grid.edit(row);
-    }
-    return false;
-  }
-
-  onDelete(row: Row, event): boolean {
-    event.stopPropagation();
-
-    if (this.grid.getSetting('mode') === 'external' && typeof this.delete !== 'undefined') {
-      this.delete.emit({
-        data: row.getData(),
-        source: this.source
-      });
-    } else {
-      this.grid.delete(row, this.deleteConfirm);
-    }
-    return false;
-  }
-
-  onCreate(row: Row, event): boolean {
-    event.stopPropagation();
-
-    this.grid.create(row, this.createConfirm);
-    return false;
-  }
-
-  onSave(row: Row, event): boolean {
-    event.stopPropagation();
-
-    this.grid.save(row, this.editConfirm);
-    return false;
-  }
-
-  onCancelEdit(row, event): boolean {
-    event.stopPropagation();
-
-    row.isInEditing = false;
-    return false;
-  }
-
-  initGrid(): void {
-
+  initGrid() {
     this.source = this.prepareSource();
     this.grid = new Grid(this.source, this.prepareSettings());
     this.grid.onSelectRow().subscribe((row) => this.onSelectRow(row));
