@@ -85,8 +85,8 @@ export class Ng2SmartTableComponent implements OnChanges, OnInit {
 
   ngOnInit(): void {
     if (this.dragulaRows) {
-      this.dragulaService.drag.subscribe(args => this.onDragRow(args));
-      this.dragulaService.dropModel.subscribe(args => this.onDropRow(args));
+      this.dragulaService.drag.subscribe((args: any) => this.onDragRow(args));
+      this.dragulaService.dropModel.subscribe((args: any) => this.onDropRow(args));
     }
     else {
       this.dragulaService = null;
@@ -112,7 +112,7 @@ export class Ng2SmartTableComponent implements OnChanges, OnInit {
     });
   }
 
-  private getDomIndexOf(child, parent) {
+  private getDomIndexOf(child: any, parent: any) {
     return Array.prototype.indexOf.call(parent.children, child);
   }
 
