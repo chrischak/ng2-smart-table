@@ -24,7 +24,9 @@
     <password-editor *ngSwitchCase="'password'"
                      [cell]="cell"
                      [inputClass]="inputClass"
-                     (onClick)="onClick($event)">
+                     (onClick)="onClick($event)"
+                     (onEdited)="onEdited($event)"
+                     (onStopEditing)="onStopEditing()">
     </password-editor>
 
     <completer-editor *ngSwitchCase="'completer'"
