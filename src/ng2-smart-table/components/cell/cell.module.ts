@@ -20,7 +20,7 @@ import { PasswordEditorComponent } from './cell-editors/password-editor.componen
 import { IconErrorTooltipComponent } from './cell-editors/icon-error-tooltip.component';
 
 import { CustomFormsModule } from 'ng2-validation';
-import { TooltipModule } from 'ng2-bootstrap/tooltip';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 const CELL_COMPONENTS = [
   CellComponent,
