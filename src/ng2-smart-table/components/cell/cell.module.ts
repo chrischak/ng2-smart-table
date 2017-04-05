@@ -34,6 +34,7 @@ const CELL_COMPONENTS = [
   TextareaEditorComponent,
   CustomViewComponent,
   ViewCellComponent,
+
   NumberEditorComponent,
   PasswordEditorComponent,
   IconErrorTooltipComponent,
