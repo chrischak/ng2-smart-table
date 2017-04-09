@@ -19,11 +19,11 @@ npm version patch
 ```
 * build package
 ```
-npm run build:package
+npm run build:release
 ```
 * publish package
 ```
-npm publish
+npm publish ./dist/ng2-smart-table
 ```
 
 ## Installation
