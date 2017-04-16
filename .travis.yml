@@ -29,7 +29,7 @@ install:
   - yarn
 
 script:
-  - yarn run build:ci
+  - npm run build:ci
 
 notifications:
   slack: eko-point:TMIbgKa6KbgUp2MMDDY8Auye

@@ -1,7 +1,10 @@
-input, textarea {
-  width: 100%;
-  line-height: normal;
-  padding: .375rem .75rem;
+:host {
+  input,
+  textarea {
+    width: 100%;
+    line-height: normal;
+    padding: .375rem .75rem;
+  }
 }
 
   $success: #90b900 !default;
