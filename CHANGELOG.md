@@ -1,3 +1,10 @@
+<a name="1.0.4"></a>
+# 1.0.4 (2017-04-13)
+
+### Bug fixes
+
+* **build:** added mising rxjs imports ([24c3098](https://github.com/akveo/ng2-smart-table/commit/24c309807e758ce62011d8bf5b16b3e3793d8b22)), closes ([#304](https://github.com/akveo/ng2-smart-table/issues/304))
+
 <a name="1.0.3"></a>
 # 1.0.3 (2017-04-05)
 
@@ -25,8 +32,11 @@
 
 ### Features
 
-* **table:** update to angular 4.0.0
 * **demo:** @angular/cli integration
+* **demo:** setup demo deploying to the github pages
+* **demo:** setup e2e and unit testing
+* **table:** update to angular 4.0.0
+* **table:** integrate gulp for npm package bundling
 * **table:** add a row hover event ([68b73ee](https://github.com/akveo/ng2-smart-table/commit/68b73eef0b4607cef522f201c3e67a230a5ee03e)), ([1ceca0d](https://github.com/akveo/ng2-smart-table/commit/1ceca0d6afa3be3ba5f2ef53447d9a75f360150a)), ([#253](https://github.com/akveo/ng2-smart-table/pull/253)), ([#262](https://github.com/akveo/ng2-smart-table/pull/262))
 * **table:** add a deselect row ([2ab02b4](https://github.com/akveo/ng2-smart-table/commit/2ab02b4949c577da34153f7ad1870e7acaa399e6)), ([#94](https://github.com/akveo/ng2-smart-table/pull/94))
 * **table:** add a getFilteredAndSorted function ([df3f343](https://github.com/akveo/ng2-smart-table/commit/df3f343caaff9aff1ecc6d8b94767e3466524068)), ([#249](https://github.com/akveo/ng2-smart-table/pull/249))
@@ -41,6 +51,11 @@
 
 * **table:** move the components to the modules
 * **demo:** move some examples to new /examples route ([#213](https://github.com/akveo/ng2-smart-table/pull/213))
+
+### Breaking Changes
+
+* **table:** remove div container with the css styles from ng2-smart-table component
+* **table:** remove the css classes from table container
 
 <a name="0.6.0-0"></a>
 # 0.6.0-0 (2017-03-02)
