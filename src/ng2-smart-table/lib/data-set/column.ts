@@ -5,8 +5,10 @@ export class Column {
   title: string = '';
   type: string = '';
   class: string = '';
+  width: string = '';
   isSortable: boolean = false;
   isEditable: boolean = true;
+  isAddable: boolean = true;
   isFilterable: boolean = false;
   sortDirection: string = '';
   defaultSortDirection: string = '';
@@ -49,6 +51,7 @@ export class Column {
   protected process() {
     this.title = this.settings['title'];
     this.class = this.settings['class'];
+    this.width = this.settings['width'];
     this.type = this.prepareType();
     this.editor = this.settings['editor'];
     this.filter = this.settings['filter'];
@@ -59,6 +62,7 @@ export class Column {
       .indexOf(this.settings['sortDirection']) !== -1 ? this.settings['sortDirection'] : '';
     this.isSortable = typeof this.settings['sort'] === 'undefined' ? true : !!this.settings['sort'];
     this.isEditable = typeof this.settings['editable'] === 'undefined' ? true : !!this.settings['editable'];
+    this.isAddable=typeof this.settings['addable'] === 'undefined' ? true : !!this.settings['addable'];
     this.sortDirection = this.prepareSortDirection();
     this.inPlaceEdit = typeof this.settings['inPlaceEdit'] === 'undefined' ? false: !!this.settings['inPlaceEdit'];
 
