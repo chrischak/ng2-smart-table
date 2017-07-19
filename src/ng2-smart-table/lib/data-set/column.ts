@@ -17,11 +17,16 @@ export class Column {
   renderComponent: any = null;
   compareFunction: Function;
   valuePrepareFunction: Function;
-  filterFunction: Function;  
+  filterFunction: Function;
+  onComponentInitFunction: Function;
   inPlaceEdit: boolean = false;
 
   constructor(public id: string, protected settings: any, protected dataSet: DataSet) {
     this.process();
+  }
+
+  getOnComponentInitFunction(): Function {
+    return this.onComponentInitFunction;
   }
 
   getCompareFunction(): Function {
@@ -69,6 +74,7 @@ export class Column {
     this.compareFunction = this.settings['compareFunction'];
     this.valuePrepareFunction = this.settings['valuePrepareFunction'];
     this.filterFunction = this.settings['filterFunction'];
+    this.onComponentInitFunction = this.settings['onComponentInitFunction'];
   }
 
   prepareType(): string {
